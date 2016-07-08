@@ -36,14 +36,12 @@ railApp.run(["$rootScope","$http",function($rootScope, $http) {
             // a doit être égale à b
             return 0;
         });
-
         $rootScope.gares = arrayGares;
         localStorage.gares = JSON.stringify(arrayGares);
     })
     .error(function(data, status, headers){
             //alert("error xhr");
             $rootScope.gares = JSON.parse(localStorage.gares);
-            connexion = false;
     });
     }//else
   }]);
@@ -51,35 +49,13 @@ railApp.run(["$rootScope","$http",function($rootScope, $http) {
 
 railApp.controller('mainController', function($scope, $rootScope) {
     $scope.pageClass = 'page-home';
-    //$scope.test = false;
 });
 
-railApp.controller('detailController', function($scope, $routeParams, $rootScope, $http) {
+railApp.controller('detailController', function($scope, $routeParams, $rootScope) {
     $scope.pageClass = 'detail';
     myId = parseInt($routeParams.id);
     //$scope.idGare = parseInt($routeParams.id);
     //console.log(localStorage.gares);
     garesArray = JSON.parse(localStorage.gares);
     $scope.theGare = garesArray[myId].name;
-    //retrouver les trains
-    var urlApi = 'http://api.irail.be/liveboard/?id='+garesArray[myId].id+'&format=json';
-
-    $http({
-        "method" : "GET",
-        "url" : urlApi
-    })
-    .success(function(data, status, headers){
-        console.log(data);
-        connexion = true;
-        $scope.nbTrains = data.departures.number;
-        $scope.trains = data.departures.departure;
-
-        
-    })
-    .error(function(data, status, headers){
-            //alert("error xhr");
-            connexion = false;
-    });
-        
-
 });

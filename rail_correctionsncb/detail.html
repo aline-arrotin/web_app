@@ -1,4 +1,19 @@
 <h1>Gare de {{theGare}}</h1>
 
+<div ng-if="nbTrains > 0">
+<h2>{{nbTrains}} trains au départ</h2>
+
+<div id="listeGares">
+	<div data-ng-repeat="item in trains">
+		<h3>{{item.station}}</h3>
+		<div class="details">
+			<li><strong>Départ : </strong>{{ item.time | date : 'HH:mm:ss' : '+3'}}</li>
+			<li><strong>Quai : </strong>{{ item.platform}}</li>
+			<li><strong>Retard : </strong>{{ item.delay}} min.</li>
+		</div>
+	</div>
+</div>
+</div>
+<div ng-if="!nbTrains"><h3>Pas de train annoncé</h3></div>
 
 <a href="#/" class="btn btn-success btn-lg">Home</a>

@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+ <head>
+    <meta charset="utf-8"/>
+    <title>index</title>
+  	<!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script>window.html5 || document.write('<script src="js/html5shiv.js"><\/script>')</script>
+  	<![endif]-->
+  	<style>
+
+  	.sous-container{
+  		display: flex;
+  		flex-direction: row;
+  	}
+
+  	.picture{
+  		width: 50%;
+  	}
+
+  	.picture li{
+  		width: 50%;
+  	}
+
+	img{
+		width: 50%;
+	}
+
+	section #big{
+		width: 75%;
+	}
+
+  	</style>
+	</head>
+<body>
+	<div class="container">
+		<form action="">
+			<textarea name="" id="contenu" cols="30" rows="10"></textarea>
+		</form>
+	</div>
+	<div class="sous-container">
+		<aside>
+	<ul class="picture">
+		<li><img src="22775-kristofer-hivju.jpg" alt=""></li>
+		<li><img src="kristofer-hivju-cafe-700x429.jpg" alt=""></li>
+		<li><img src="108_pint-of-guiness.jpg" alt=""></li>
+	</ul>
+	</aside>
+
+	<section>
+		<img src="22775-kristofer-hivju.jpg" alt="" id="big">
+	</section>
+	</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+<script>
+	myModel = document.querySelector("#contenu");
+	myImgs = document.querySelectorAll("aside img");
+	myBig = document.querySelector("#big");
+
+	if("src" in localStorage){
+		myBig.src = localStorage.src;
+	}
+
+	for(i= 0; i< myImgs.length; i++){
+		myImgs[i].onclick =function(){
+			url = this.src;
+			//alert(url);
+			myBig.src = url;
+			localStorage.src = url;
+		}
+	}
+
+	myModel.onkeyup = function(){
+		texte = myModel.value;
+		localStorage.texte = texte;
+		//alert(texte);
+	}
+</script>
+
+</body>
+</html>

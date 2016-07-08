@@ -1,0 +1,16 @@
+<h1>Gare de {{theGare}}</h1>
+
+
+<a href="#/" class="btn btn-success btn-lg">Home</a>
+
+
+<h2>{{number}} trains au départ</h2>
+<ul>
+<li data-ng-repeat="item in nextTrains"><a href="#/{{$index}}" class="btn btn-success btn-lg">{{item.station}}</a>
+<ul>
+	<li >{{item.platform}}</li>
+	<li >{{item.delay}}</li>
+</ul>
+</li>
+</ul>
+

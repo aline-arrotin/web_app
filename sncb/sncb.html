@@ -1,0 +1,6 @@
+<h1>Liste des gares</h1>
+<div class="listStation" data-ng-controller="sncbCtrl">
+	<ul data-ng-repeat="listing in gares">
+		<li><a href="#/station/{{$index}}">{{listing.name}}</a></li>
+	</ul>
+</div>

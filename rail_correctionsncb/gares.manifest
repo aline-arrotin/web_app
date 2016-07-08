@@ -1,0 +1,16 @@
+CACHE MANIFEST
+
+# 2016-07-07 v0.0.3
+
+CACHE:
+index.html
+page-home.html
+detail.html
+bower_components/angular/angular.min.js
+bower_components/angular-route/angular-route.min.js
+bower_components/angular-animate//angular-animate.min.js
+app.js
+style.css
+
+NETWORK:
+*

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" manifest="todo.manifest">
+<head>
+	<meta charset="UTF-8">
+	<title>ToDo</title>
+	<style>
+	#max {
+		display:flex;
+		flex-direction: column;
+		background-color: red;
+	}
+	main {
+		width:75%;
+	}
+
+	.hidden{
+		display: none;
+	}
+	</style>
+</head>
+<body>
+	<div id="max">
+	<main>
+		<h1>A faire</h1>
+		<div id="liste"></div>
+	</main>
+	<aside>
+	<h1>New tâche</h1>
+		<form action="" id="newTodo">
+			<label for="todo"></label><br>
+			<textarea name="todo" id="todo" cols="30" rows="10" placeholder="Votre tâche"></textarea><br>
+			<label for="date">Echéance</label><br>
+			<input type="date" id="date">
+			<input type="submit" value="Ajouter">
+		</form>
+			<a href="#" id="efface">Tout est fait</a>
+	</aside>
+	<div class="image">
+		<img src="22775-kristofer-hivju.jpg" alt="">
+	</div>
+	
+	</div>
+
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+	<script src="todo.js"></script>
+</body>
+</html>

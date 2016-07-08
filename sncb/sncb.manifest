@@ -1,0 +1,11 @@
+CACHE MANIFEST
+
+# 2016-07-07 v0.0.8
+
+CACHE:
+sncb.html
+js/main.js
+bower_components/angular/angular.min.js
+
+NETWORK:
+*

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+ <head>
+    <meta charset="utf-8"/>
+    <title>Ecran</title>
+  	<!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script>window.html5 || document.write('<script src="js/html5shiv.js"><\/script>')</script>
+  	<![endif]-->
+	</head>
+<body>
+	<div class="container">
+<div id="sortie"></div>
+<img src="" alt="" id="big">
+	</div>
+
+
+<script>
+maSortie = document.querySelector("#sortie");
+function update(){
+	if("texte" in localStorage){
+		maSortie.innerHTML = localStorage.texte;
+	}
+
+	if("src" in localStorage){
+		document.querySelector("#big").src = localStorage.src;
+	}
+}
+setInterval(update,1000);
+</script>
+</body>
+</html>
